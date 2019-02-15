@@ -25,10 +25,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="gone"
                 android:layout_margin="@dimen/padding_small"
                 android:text="@string/leave"
-                android:theme="@style/AccentButton" />
+                android:textColorLink="@color/md_blue_900"
+                android:theme="@style/AccentButton"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tv_add"
