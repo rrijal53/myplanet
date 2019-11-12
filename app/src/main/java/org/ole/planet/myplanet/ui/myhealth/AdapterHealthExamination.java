@@ -1,11 +1,6 @@
 package org.ole.planet.myplanet.ui.myhealth;
 
 import android.content.Context;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -13,8 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.RecyclerView;
+
 import org.ole.planet.myplanet.R;
-import org.ole.planet.myplanet.model.RealmMyHealth;
 import org.ole.planet.myplanet.model.RealmMyHealthPojo;
 import org.ole.planet.myplanet.utilities.TimeUtils;
 

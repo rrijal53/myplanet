@@ -2,8 +2,9 @@ package org.ole.planet.myplanet.ui.myhealth;
 
 
 import java.io.Serializable;
+
 public class RealmExamination implements Serializable {
-    private String temperature, pulse, bp, height, weight, vision, hearing, notes, diagnosis,diagnosisNote, treatments, medications, immunizations, allergies, xrays, tests, referrals;
+    private String temperature, pulse, bp, height, weight, vision, hearing, notes, diagnosis, diagnosisNote, treatments, medications, immunizations, allergies, xrays, tests, referrals;
     private long date;
 
     public String getTemperature() {
@@ -138,15 +139,15 @@ public class RealmExamination implements Serializable {
         return date;
     }
 
+    public void setDate(long date) {
+        this.date = date;
+    }
+
     public String getDiagnosisNote() {
         return diagnosisNote;
     }
 
     public void setDiagnosisNote(String diagnosisNote) {
         this.diagnosisNote = diagnosisNote;
-    }
-
-    public void setDate(long date) {
-        this.date = date;
     }
 }

@@ -1,9 +1,20 @@
 package org.ole.planet.myplanet.ui.myhealth;
 
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -12,24 +23,6 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.Spinner;
-import android.widget.TextView;
-
-import com.borax12.materialdaterangepicker.date.AccessibleDateAnimator;
 import com.google.gson.Gson;
 
 import org.ole.planet.myplanet.R;
@@ -134,13 +127,13 @@ public class MyHealthFragment extends Fragment {
         ListView lv = alertHealth.findViewById(R.id.list);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener((adapterView, view, i, l) -> {
-            userId = map.get(((TextView)view).getText().toString());
+            userId = map.get(((TextView) view).getText().toString());
             getHealthRecords(userId);
             dialog.dismiss();
         });
         dialog = new AlertDialog.Builder(getActivity()).setTitle(getString(R.string.select_health_member))
                 .setView(alertHealth)
-                .setCancelable(false).setNegativeButton("Dismiss",null).create();
+                .setCancelable(false).setNegativeButton("Dismiss", null).create();
 
 
         dialog.show();
@@ -194,7 +187,7 @@ public class MyHealthFragment extends Fragment {
             }
             rvRecord.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
             rvRecord.setNestedScrollingEnabled(false);
-            rvRecord.setAdapter(new AdapterHealthExamination(getActivity(), list,mh ));
+            rvRecord.setAdapter(new AdapterHealthExamination(getActivity(), list, mh));
             List<RealmExamination> finalList = list;
             rvRecord.post(() -> rvRecord.scrollToPosition(finalList.size() - 1));
         } else {

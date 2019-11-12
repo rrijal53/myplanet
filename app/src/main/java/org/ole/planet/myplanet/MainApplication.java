@@ -80,6 +80,7 @@ public class MainApplication extends Application implements Application.Activity
         createJob(60, TaskNotificationService.class);
         Thread.setDefaultUncaughtExceptionHandler((thread, e) -> handleUncaughtException(e));
         registerActivityLifecycleCallbacks(this);
+
     }
 
     public void createJob(int sec, Class jobClass) {

@@ -1,10 +1,11 @@
 package org.ole.planet.myplanet.ui.myhealth;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.widget.Spinner;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
@@ -26,7 +27,8 @@ public class AddMyHealthActivity extends AppCompatActivity {
     RealmMyHealthPojo healthPojo;
     RealmUserModel userModelB;
     String userId;
-    String key,iv;
+    String key, iv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +42,7 @@ public class AddMyHealthActivity extends AppCompatActivity {
 
         key = userModelB.getKey();
         iv = userModelB.getIv();
-        if (TextUtils.isEmpty(key) || TextUtils.isEmpty(iv)){
+        if (TextUtils.isEmpty(key) || TextUtils.isEmpty(iv)) {
             Utilities.toast(this, "You cannot create health record from myPlanet. Please contact your manager.");
             finish();
             return;
