@@ -137,7 +137,7 @@ public abstract class ProcessUserDataActivity extends PermissionActivity impleme
     }
 
     public void startUpload() {
-        progressDialog.setMessage("Uploading data to server, please wait.....");
+        progressDialog.setMessage("Uploading data to server, please wait..");
         progressDialog.show();
         Utilities.log("Upload : upload started");
         UploadToShelfService.getInstance().uploadUserData(success -> {
