@@ -1,13 +1,13 @@
 name: Release And Update
 
-on:
-  push:
-    branches:
-      - 'master'
+# on:
+#   push:
+#     branches:
+#       - 'master'
 
-#on:
-#  workflow_dispatch:
-#    inputs:
+on:
+ workflow_dispatch:
+   inputs:
 
 jobs:
   apk:
